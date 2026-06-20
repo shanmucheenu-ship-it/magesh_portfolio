@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mageshwaran | Full Stack Developer Resume</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;850&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #030712;
+      --bg-card: #0b0f19;
+      --border-color: rgba(243, 244, 246, 0.08);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.15);
+      --accent: #a855f7;
+      --accent-glow: rgba(168, 85, 247, 0.15);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-top: 80px; /* Space for sticky header */
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Interactive Top Header (Screen Only) */
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      border: none;
+      color: white;
+      box-shadow: 0 4px 20px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(99, 102, 241, 0.3);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* CV Frame */
+    .cv-frame {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background Blur Shapes */
+    .cv-frame::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 300px;
+      height: 300px;
+      background: var(--primary-glow);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .cv-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: var(--accent-glow);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    /* Header block */
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .title-area h1 {
+      font-family: var(--font-heading);
+      font-size: 2.75rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+      background: linear-gradient(135deg, #fff 30%, var(--text-secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .title-area h2 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-item svg {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover {
+      color: #fff;
+    }
+
+    /* Content Layout Grid */
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 3rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Left Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Right Main */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Sections */
+    section {
+      text-align: left;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-left: 3px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    /* Summary / Objectives */
+    .summary-text {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Education Item */
+    .edu-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .edu-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .edu-sub {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 0.15rem 0 0.35rem 0;
+    }
+
+    .edu-date {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Skill pill groups */
+    .skills-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .skills-group-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-badge {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    /* Work / Projects */
+    .timeline-item {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--border-color);
+      padding-bottom: 2rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4.5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 2px var(--primary-glow);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .timeline-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .timeline-company {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .timeline-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-bullets {
+      list-style-type: none;
+      padding-left: 0.5rem;
+    }
+
+    .timeline-bullets li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.35rem;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .timeline-bullets li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* Projects sub-grid */
+    .project-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.25rem;
+    }
+
+    .project-card-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .project-tech-badge {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(99, 102, 241, 0.05);
+      border: 1px solid rgba(99, 102, 241, 0.15);
+      border-radius: 6px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Soft Skills & Languages list styling */
+    .list-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      border-bottom: 1px dashed rgba(243, 244, 246, 0.05);
+      padding-bottom: 0.25rem;
+    }
+
+    .list-item-key {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Certifications timeline/list */
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .cert-icon {
+      color: var(--accent);
+    }
+
+    /* Media responsive settings */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 70px;
+      }
+      .top-header {
+        padding: 0 1rem;
+      }
+      .cv-frame {
+        padding: 1.5rem;
+        border-radius: 16px;
+      }
+      .grid-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .contact-details {
+        grid-template-columns: 1fr;
+      }
+      .title-area h1 {
+        font-size: 2.25rem;
+      }
+    }
+
+    /* Light Theme Variables & Overrides for Screen View */
+    html.light {
+      --bg-dark: #f9fafb;
+      --bg-card: #ffffff;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #6b7280;
+      --primary: #4f46e5;
+      --accent: #7c3aed;
+      --primary-glow: rgba(79, 70, 229, 0.05);
+      --accent-glow: rgba(124, 58, 237, 0.05);
+    }
+    
+    html.light body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+    }
+
+    html.light .title-area h1 {
+      background: linear-gradient(135deg, #111827 30%, #4b5563);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    html.light .project-card {
+      background: rgba(0, 0, 0, 0.01);
+    }
+
+    html.light .skill-badge {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    html.light .top-header {
+      background: rgba(249, 250, 251, 0.8);
+    }
+
+    html.light .logo {
+      color: #111827;
+    }
+
+    /* --- PRINT OPTIMIZATIONS --- */
+    @media print {
+      body {
+        background-color: #fff !important;
+        color: #111 !important;
+        padding-top: 0 !important;
+        font-size: 11pt !important;
+      }
+
+      .top-header {
+        display: none !important; /* Hide print actions */
+      }
+
+      .container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .cv-frame {
+        background-color: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+
+      .cv-frame::before, .cv-frame::after {
+        display: none !important; /* Hide glowing circles */
+      }
+
+      header {
+        border-bottom-color: #ddd !important;
+        margin-bottom: 20pt !important;
+        padding-bottom: 15pt !important;
+      }
+
+      .title-area h1 {
+        font-size: 26pt !important;
+        color: #111 !important;
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+      }
+
+      .title-area h2 {
+        color: #4f46e5 !important;
+        font-size: 14pt !important;
+      }
+
+      .contact-details {
+        font-size: 10pt !important;
+        color: #333 !important;
+      }
+
+      .contact-item svg {
+        color: #4f46e5 !important;
+      }
+
+      .section-title {
+        color: #111 !important;
+        border-left-color: #4f46e5 !important;
+        font-size: 13pt !important;
+        margin-bottom: 10pt !important;
+      }
+
+      .summary-text, .edu-sub, .timeline-desc, .timeline-bullets li, .project-card-desc, .list-item {
+        color: #222 !important;
+      }
+
+      .edu-title, .timeline-title, .project-card-title, .list-item-key {
+        color: #111 !important;
+      }
+
+      .edu-date, .timeline-company {
+        color: #4f46e5 !important;
+      }
+
+      .skill-badge {
+        background: #f3f4f6 !important;
+        border-color: #ddd !important;
+        color: #222 !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .project-card {
+        background: none !important;
+        border-color: #ddd !important;
+      }
+
+      .project-tech-badge {
+        background: #eef2ff !important;
+        border-color: #c7d2fe !important;
+        color: #4f46e5 !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .grid-layout {
+        grid-template-columns: 1.2fr 2fr !important;
+        gap: 30pt !important;
+      }
+
+      /* Clean page breaks */
+      section {
+        page-break-inside: avoid !important;
+      }
+      
+      .timeline-item {
+        page-break-inside: avoid !important;
+        border-left-color: #ddd !important;
+      }
+
+      .project-card {
+        page-break-inside: avoid !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 15mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Top Bar -->
+  <div class="top-header">
+    <a href="/" class="logo">MAHI<span>.</span></a>
+    <div class="actions">
+      <!-- Theme Toggle Button -->
+      <button onclick="toggleTheme()" class="btn btn-secondary" id="theme-toggle-btn" style="padding: 0.6rem; border-radius: 12px; width: 40px; height: 40px; display: inline-flex; justify-content: center; align-items: center;" title="Toggle Theme">
+      </button>
+      <a href="/" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Portfolio
+      </a>
+      <button onclick="window.print()" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cv-frame">
+      
+      <!-- Header / Basic Contact Info -->
+      <header>
+        <div class="header-content">
+          <div class="title-area">
+            <h1>Mageshwaran</h1>
+            <h2>Full Stack Developer</h2>
+          </div>
+          <div class="contact-details">
+            <div class="contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:mahimahi05865@gmail.com">mahimahi05865@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+918610442279">+91 86104 42279</a>
+            </div>
+            <div class="contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Coimbatore, Tamilnadu, INDIA</span>
+            </div>
+            <div class="contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <a href="https://github.com/magesh1122" target="_blank">github.com/magesh1122</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Grid layout -->
+      <div class="grid-layout">
+        
+        <!-- Left Column (Sidebar Info) -->
+        <div class="sidebar">
+          
+          <!-- Education Section -->
+          <section>
+            <h3 class="section-title">Education</h3>
+            <div class="edu-item">
+              <div class="edu-title">Diploma in Computer Engineering</div>
+              <div class="edu-sub">Ramakrishna Polytechnic College, Coimbatore</div>
+              <div class="edu-date">Expected Graduation: 2027</div>
+            </div>
+          </section>
+
+          <!-- Technical Skills Section -->
+          <section>
+            <h3 class="section-title">Technical Skills</h3>
+            
+            <div class="skills-group">
+              <h4 class="skills-group-title">Frontend</h4>
+              <div class="skills-list">
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">Tailwind CSS</span>
+                <span class="skill-badge">Vite</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h4 class="skills-group-title">Backend</h4>
+              <div class="skills-list">
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Express.js</span>
+                <span class="skill-badge">PHP</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h4 class="skills-group-title">Databases</h4>
+              <div class="skills-list">
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">MongoDB</span>
+                <span class="skill-badge">Supabase</span>
+                <span class="skill-badge">MySQL</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h4 class="skills-group-title">Tools & Dev</h4>
+              <div class="skills-list">
+                <span class="skill-badge">Git & GitHub</span>
+                <span class="skill-badge">VS Code</span>
+                <span class="skill-badge">Figma</span>
+                <span class="skill-badge">Postman</span>
+                <span class="skill-badge">XAMPP</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Certifications Section -->
+          <section>
+            <h3 class="section-title">Certifications</h3>
+            <div class="cert-item">
+              <span class="cert-icon">🏆</span>
+              <span>Full Stack Development Training</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-icon">🏆</span>
+              <span>UI/UX Design Fundamentals</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-icon">🏆</span>
+              <span>Web Development Workshops</span>
+            </div>
+          </section>
+
+          <!-- Soft Skills Section -->
+          <section>
+            <h3 class="section-title">Soft Skills</h3>
+            <div class="skills-list">
+              <span class="skill-badge">Problem Solving</span>
+              <span class="skill-badge">Team Collaboration</span>
+              <span class="skill-badge">Communication</span>
+              <span class="skill-badge">Time Management</span>
+              <span class="skill-badge">Leadership</span>
+              <span class="skill-badge">Adaptability</span>
+            </div>
+          </section>
+
+          <!-- Languages Section -->
+          <section>
+            <h3 class="section-title">Languages</h3>
+            <div class="list-items">
+              <div class="list-item">
+                <span class="list-item-key">Tamil</span>
+                <span>Native</span>
+              </div>
+              <div class="list-item">
+                <span class="list-item-key">English</span>
+                <span>Professional</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Right Column (Main Work Content) -->
+        <div class="main-content">
+          
+          <!-- Career Objective Section -->
+          <section>
+            <h3 class="section-title">Career Objective</h3>
+            <p class="summary-text">
+              To secure a challenging position in the software development field where I can apply my technical knowledge, continuously learn new technologies, and contribute to innovative projects while growing professionally.
+            </p>
+          </section>
+
+          <!-- Professional Summary Section -->
+          <section>
+            <h3 class="section-title">Professional Summary</h3>
+            <p class="summary-text">
+              Passionate and motivated Full Stack Developer with hands-on experience in building web applications using modern technologies. Skilled in frontend and backend development, database management, and UI/UX design. Currently gaining industry experience through an internship while working on real-world projects such as agricultural marketplaces, attendance management systems, and online voting platforms. Strong problem-solving abilities with a keen interest in creating innovative digital solutions.
+            </p>
+          </section>
+
+          <!-- Internship Experience Section -->
+          <section>
+            <h3 class="section-title">Internship Experience</h3>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-title">Full Stack Development Intern</span><br>
+                  <span class="timeline-company">Brainbric Innovations</span>
+                </div>
+                <span class="timeline-date">Gaining Experience</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Developed responsive web interfaces using HTML, CSS, and JavaScript.</li>
+                <li>Created and maintained portfolio projects.</li>
+                <li>Learned and implemented frontend and backend integration.</li>
+                <li>Worked with databases and API connections.</li>
+                <li>Collaborated on real-world software development tasks.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Projects Section -->
+          <section>
+            <h3 class="section-title">Projects</h3>
+            <div class="project-grid">
+              
+              <div class="project-card">
+                <div class="project-card-title">Uzhavar Sandhai</div>
+                <div class="project-card-desc">
+                  Agricultural marketplace platform connecting farmers and customers. Features Farmer, Customer, and Admin modules with product management, order tracking, delivery management system, and real-time updates with dashboard analytics.
+                </div>
+                <div class="project-tech-list">
+                  <span class="project-tech-badge">React.js</span>
+                  <span class="project-tech-badge">Node.js</span>
+                  <span class="project-tech-badge">PostgreSQL</span>
+                  <span class="project-tech-badge">Tailwind CSS</span>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-card-title">Online Voting & Polling System</div>
+                <div class="project-card-desc">
+                  Secure voting and survey management platform. Built an admin dashboard for poll creation and result analysis with IP-based duplicate vote prevention and interactive result visualization.
+                </div>
+                <div class="project-tech-list">
+                  <span class="project-tech-badge">React.js</span>
+                  <span class="project-tech-badge">Node.js</span>
+                  <span class="project-tech-badge">MongoDB</span>
+                  <span class="project-tech-badge">Express.js</span>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-card-title">Attendance Management System</div>
+                <div class="project-card-desc">
+                  Principal dashboard for department-wise attendance monitoring. Implements automated daily/monthly attendance reports, Excel export functionality, and interactive analytics graphical reports.
+                </div>
+                <div class="project-tech-list">
+                  <span class="project-tech-badge">React.js</span>
+                  <span class="project-tech-badge">Node.js</span>
+                  <span class="project-tech-badge">PostgreSQL</span>
+                  <span class="project-tech-badge">Tailwind CSS</span>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-card-title">Zylo Campus Marketplace</div>
+                <div class="project-card-desc">
+                  Student-focused peer-to-peer campus marketplace. Implements product listing and management, user-friendly modern UI, and a commission-based marketplace model.
+                </div>
+                <div class="project-tech-list">
+                  <span class="project-tech-badge">React.js</span>
+                  <span class="project-tech-badge">Supabase</span>
+                  <span class="project-tech-badge">Tailwind CSS</span>
+                  <span class="project-tech-badge">Vite</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function applyTheme(theme) {
+      const btn = document.getElementById('theme-toggle-btn');
+      if (theme === 'light') {
+        document.documentElement.classList.add('light');
+        if (btn) {
+          btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+          btn.title = "Toggle Dark Mode";
+        }
+      } else {
+        document.documentElement.classList.remove('light');
+        if (btn) {
+          btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+          btn.title = "Toggle Light Mode";
+        }
+      }
+    }
+
+    // Init theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(currentTheme);
+
+    function toggleTheme() {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', currentTheme);
+      applyTheme(currentTheme);
+    }
+  </script>
+</body>
+</html>
