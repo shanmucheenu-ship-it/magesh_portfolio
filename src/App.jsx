@@ -45,7 +45,7 @@ function App() {
             onClick={() => setHasEntered(true)}
             className="px-8 py-4 border border-white/20 text-white/70 font-bold uppercase tracking-[0.3em] hover:bg-white/10 hover:border-white/60 hover:text-white transition-all duration-500 rounded-none tracking-widest text-sm shadow-[0_0_30px_rgba(255,255,255,0)] hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]"
           >
-            Enter Cinematic Universe
+            Enter MAHI'S VERSE
           </button>
         </div>
       )}
