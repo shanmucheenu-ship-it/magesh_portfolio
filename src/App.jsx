@@ -1,18 +1,21 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 import { Gamepad2 } from 'lucide-react'
+import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Experience from './components/Experience'
-import Startup from './components/Startup'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
 import LoadingScreen from './components/LoadingScreen'
-import ArcadeModal from './components/ArcadeModal'
+
+// Lazy load off-screen and heavy components for optimized Vite bundling
+const About = lazy(() => import('./components/About'))
+const Skills = lazy(() => import('./components/Skills'))
+const Projects = lazy(() => import('./components/Projects'))
+const Experience = lazy(() => import('./components/Experience'))
+const Startup = lazy(() => import('./components/Startup'))
+const Contact = lazy(() => import('./components/Contact'))
+const ArcadeModal = lazy(() => import('./components/ArcadeModal'))
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -53,12 +56,14 @@ function App() {
           
           <main>
             <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Experience />
-            <Startup />
-            <Contact />
+            <Suspense fallback={<div className="h-screen bg-black" />}>
+              <About />
+              <Skills />
+              <Projects />
+              <Experience />
+              <Startup />
+              <Contact />
+            </Suspense>
           </main>
           
           <Footer />
@@ -81,7 +86,9 @@ function App() {
           </motion.button>
 
           {/* Retro Arcade Modal Overlay */}
-          <ArcadeModal isOpen={isArcadeOpen} onClose={() => setIsArcadeOpen(false)} />
+          <Suspense fallback={null}>
+            <ArcadeModal isOpen={isArcadeOpen} onClose={() => setIsArcadeOpen(false)} />
+          </Suspense>
         </motion.div>
       )}
     </>
