@@ -34,8 +34,8 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
-          initial={{ rotateX: 25, rotateY: -15, opacity: 0, filter: "blur(20px)", scale: 0.9, y: 100 }}
-          animate={inView ? { rotateX: 0, rotateY: 0, opacity: 1, filter: "blur(0px)", scale: 1, y: 0 } : {}}
+          initial={{ rotateX: 25, rotateY: -15, opacity: 0, scale: 0.9, y: 100 }}
+          animate={inView ? { rotateX: 0, rotateY: 0, opacity: 1, scale: 1, y: 0 } : {}}
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
           className="flex flex-col md:flex-row gap-16 md:gap-24"
