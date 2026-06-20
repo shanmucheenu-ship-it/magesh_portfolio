@@ -61,8 +61,8 @@ export default function Hero() {
 
       {/* Glow Backdrops */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-white/5 rounded-full blur-[128px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] bg-white/5 rounded-full blur-[128px] animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
+        <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,transparent_70%)] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,transparent_70%)] animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -75,7 +75,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-left order-2 md:order-1"
           >
-            <span className="inline-block px-4 py-1.5 rounded-sm border border-white/10 text-white/60 text-xs tracking-[0.2em] uppercase font-bold mb-6 shadow-sm backdrop-blur-md bg-black/40">
+            <span className="inline-block px-4 py-1.5 rounded-sm border border-white/10 text-white/60 text-xs tracking-[0.2em] uppercase font-bold mb-6 shadow-sm bg-black/60 bg-black/40">
               The Developer
             </span>
             <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-black tracking-tight leading-none mb-2 uppercase text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
@@ -103,7 +103,7 @@ export default function Hero() {
               </a>
               <a
                 href="#contact"
-                className="px-8 py-4 border border-white/20 hover:border-white text-white rounded-none font-bold uppercase text-sm tracking-[0.2em] transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 backdrop-blur-sm bg-black/20 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                className="px-8 py-4 border border-white/20 hover:border-white text-white rounded-none font-bold uppercase text-sm tracking-[0.2em] transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 bg-black/40 bg-black/20 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]"
               >
                 Contact
                 <MessageCircle size={18} />
@@ -122,7 +122,7 @@ export default function Hero() {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/40 transition-all hover:-translate-y-1 bg-black/30 backdrop-blur-sm"
+                  className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/40 transition-all hover:-translate-y-1 bg-black/30 bg-black/40"
                   title={social.title}
                 >
                   <social.icon size={20} strokeWidth={1.5} />
@@ -148,13 +148,13 @@ export default function Hero() {
             </div>
 
             {/* Circular Glow Backdrop */}
-            <div className="absolute w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] bg-gradient-to-tr from-white/10 to-transparent blur-[64px] z-0" />
+            <div className="absolute w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,transparent_70%)] z-0" />
 
             {/* Profile Image container with 3D Tilt */}
             <motion.div
               onMouseMove={handleMouseMovePortrait}
               onMouseLeave={handleMouseLeavePortrait}
-              className="relative w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] p-[1px] bg-gradient-to-br from-white/30 via-transparent to-white/10 shadow-[0_0_50px_rgba(255,255,255,0.05)] overflow-hidden z-10 cursor-pointer backdrop-blur-sm"
+              className="relative w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] p-[1px] bg-gradient-to-br from-white/30 via-transparent to-white/10 shadow-[0_0_50px_rgba(255,255,255,0.05)] overflow-hidden z-10 cursor-pointer bg-black/40"
               style={{ rotateX, rotateY, transformStyle: 'preserve-3d', clipPath: 'polygon(10% 0, 100% 0, 90% 100%, 0% 100%)' }}
             >
               <div className="absolute inset-0 bg-black/40 pointer-events-none z-20 mix-blend-overlay" />

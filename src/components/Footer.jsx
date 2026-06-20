@@ -15,7 +15,7 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="w-12 h-12 border border-white/20 hover:border-white/60 flex items-center justify-center text-white/50 hover:text-white transition-all hover:-translate-y-1 bg-black/30 backdrop-blur-sm cursor-pointer"
+            className="w-12 h-12 border border-white/20 hover:border-white/60 flex items-center justify-center text-white/50 hover:text-white transition-all hover:-translate-y-1 bg-black/30 bg-black/40 cursor-pointer"
             title="Scroll to Top"
           >
             <ArrowUp size={18} strokeWidth={1.5} />

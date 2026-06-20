@@ -132,7 +132,7 @@ export default function Projects() {
               href="https://github.com/magesh1122"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border border-white/20 hover:border-white text-white rounded-none font-bold uppercase text-sm tracking-[0.2em] transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 backdrop-blur-sm bg-black/20 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] group"
+              className="px-8 py-4 border border-white/20 hover:border-white text-white rounded-none font-bold uppercase text-sm tracking-[0.2em] transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 bg-black/40 bg-black/20 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] group"
             >
               View Full Archive
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function TitleCard() {
   return (
     <motion.div
-      className="relative max-w-lg w-full aspect-[1.8/1] rounded-3xl p-[1px] bg-gradient-to-br from-white/30 via-white/5 to-white/20 shadow-[0_60px_120px_rgba(0,0,0,1),_0_0_80px_rgba(255,255,255,0.08)] z-10 overflow-hidden backdrop-blur-md"
+      className="relative max-w-lg w-full aspect-[1.8/1] rounded-3xl p-[1px] bg-gradient-to-br from-white/30 via-white/5 to-white/20 shadow-[0_60px_120px_rgba(0,0,0,1),_0_0_80px_rgba(255,255,255,0.08)] z-10 overflow-hidden bg-black/60"
       style={{ transformStyle: 'preserve-3d' }}
       initial={{ rotateY: 90, rotateX: 18, opacity: 0, z: -300, x: -100, filter: 'blur(20px)' }}
       animate={{ rotateY: 0, rotateX: 0, opacity: 1, z: 0, x: 0, filter: 'blur(0px)' }}

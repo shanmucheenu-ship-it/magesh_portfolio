@@ -49,7 +49,7 @@ export default function Navbar({ onOpenArcade }) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-black/90 backdrop-blur-xl border-b border-white/5 py-4'
+            ? 'bg-black/90 bg-black/80 border-b border-white/5 py-4'
             : 'bg-transparent py-6 border-b border-transparent'
         }`}
       >

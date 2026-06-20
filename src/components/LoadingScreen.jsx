@@ -108,7 +108,7 @@ export default function LoadingScreen() {
       >
         {/* Soft Aura glow behind card */}
         <motion.div
-          className="absolute w-[450px] h-[250px] rounded-full bg-white/5 blur-[130px] pointer-events-none z-0"
+          className="absolute w-[450px] h-[250px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,transparent_70%)] pointer-events-none z-0"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.85, scale: 1 }}
           transition={{ delay: 0.5, duration: 1.6, ease: "easeOut" }}
@@ -117,7 +117,7 @@ export default function LoadingScreen() {
         {/* 3D Flipping Luxury Title Card */}
         <motion.div
           style={{ transformStyle: 'preserve-3d' }}
-          className="relative max-w-lg w-full aspect-[1.8/1] rounded-3xl p-[1px] bg-gradient-to-br from-white/30 via-white/5 to-white/20 shadow-[0_60px_120px_rgba(0,0,0,1),_0_0_80px_rgba(255,255,255,0.08)] z-10 overflow-hidden backdrop-blur-md"
+          className="relative max-w-lg w-full aspect-[1.8/1] rounded-3xl p-[1px] bg-gradient-to-br from-white/30 via-white/5 to-white/20 shadow-[0_60px_120px_rgba(0,0,0,1),_0_0_80px_rgba(255,255,255,0.08)] z-10 overflow-hidden bg-black/60"
           initial={{ 
             rotateY: 90, 
             rotateX: 18,
