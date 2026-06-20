@@ -18,6 +18,7 @@ const Contact = lazy(() => import('./components/Contact'))
 const ArcadeModal = lazy(() => import('./components/ArcadeModal'))
 
 function App() {
+  const [hasEntered, setHasEntered] = useState(false)
   const [loading, setLoading] = useState(true)
   const [isArcadeOpen, setIsArcadeOpen] = useState(false)
   const { scrollYProgress } = useScroll()
@@ -27,18 +28,33 @@ function App() {
     restDelta: 0.001
   })
 
+  // Only start the loading sequence AFTER user interacts
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
-    return () => clearTimeout(timer);
-  }, []);
+    if (hasEntered) {
+      const timer = setTimeout(() => setLoading(false), 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [hasEntered]);
 
   return (
     <>
+      {/* Cinematic Entry Gate - Solves Audio Autoplay Policy */}
+      {!hasEntered && (
+        <div className="fixed inset-0 z-[999999] bg-black flex items-center justify-center">
+          <button 
+            onClick={() => setHasEntered(true)}
+            className="px-8 py-4 border border-white/20 text-white/70 font-bold uppercase tracking-[0.3em] hover:bg-white/10 hover:border-white/60 hover:text-white transition-all duration-500 rounded-none tracking-widest text-sm shadow-[0_0_30px_rgba(255,255,255,0)] hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]"
+          >
+            Enter Cinematic Universe
+          </button>
+        </div>
+      )}
+
       <AnimatePresence mode="wait">
-        {loading && <LoadingScreen key="loader" />}
+        {hasEntered && loading && <LoadingScreen key="loader" />}
       </AnimatePresence>
 
-      {!loading && (
+      {hasEntered && !loading && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
